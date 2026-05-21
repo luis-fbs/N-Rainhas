@@ -7,7 +7,7 @@ N = [8, 16, 32, 128]
 T = [10, 100, 1000]
 alpha = [0.99, 0.8, 0.5]
 
-print("N,temperatura,alpha,tempo_medio,media_iteracoes,media_conflitos,solucoes_otimas")
+print("N;temperatura;alpha;tempo_medio;media_iteracoes;media_conflitos;solucoes_otimas")
 
 for n in N:
     for t in T:
@@ -28,9 +28,9 @@ for n in N:
                 conflitos.append(custo(resultado))
 
             print(
-                f"{n},{t},{a},"
-                f"{mean(tempos):.4f},"
-                f"{mean(iteracoes):.4f},"
-                f"{mean(conflitos):.4f},"
+                f"{n};{t};{a};"
+                f"{mean(tempos):.4f};"
+                f"{mean(iteracoes):.4f};"
+                f"{mean(conflitos):.4f};"
                 f"{solucoes_otimas}"
             )
