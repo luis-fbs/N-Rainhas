@@ -29,12 +29,14 @@ def simulated_annealing(n, temperatura=100, alpha=.99, temperatura_minima=.01):
 
     iteracoes = 0
     while temperatura > temperatura_minima:
-        if custo(solucao_atual) == 0:
+        custo_solucao_atual = custo(solucao_atual)
+        if custo_solucao_atual == 0:
             return solucao_atual, iteracoes
 
         nova_solucao = vizinho(solucao_atual)
         custo_nova_solucao = custo(nova_solucao)
-        delta = custo_nova_solucao - custo(solucao_atual)
+
+        delta = custo_nova_solucao - custo_solucao_atual
 
         if delta <= 0:
             solucao_atual = nova_solucao
